@@ -28,9 +28,16 @@ function getBgImg() {
 }
 
 function setBgImgDefault() {
-  let imgIndex = 1 + ~~(Math.random() * 3); //3为图片数量
+  const imageDirectory = './img/background';
+  const imageFiles = files.filter(file => {
+    const ext = path.extname(file).toLowerCase();
+    return ext === '.jpg' || ext === '.webp';
+  });
+  console.log(imageFiles);
+
+  let imgIndex = 1 + ~~(Math.random() * 8); //3为图片数量
   // console.log(imgIndex);
-  let imgUrl = `./img/background${imgIndex}.webp`;
+  let imgUrl = `./img/background/${imgIndex}.jpg`;
   let attempts = 0;
   const maxAttempts = 3;
 
@@ -41,8 +48,8 @@ function setBgImgDefault() {
   while (attempts++ < maxAttempts) {
     console.log(attempts);
     if (bg_img[1] === imgUrl) {
-      imgIndex = 1 + ~~(Math.random() * 3);
-      imgUrl = `./img/background${imgIndex}.webp`;
+      imgIndex = 1 + ~~(Math.random() * 8);
+      imgUrl = `./img/background/${imgIndex}.jpg`;
     } else {
       bg_img[1] = imgUrl;
       setBgImg(bg_img);
