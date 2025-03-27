@@ -28,15 +28,7 @@ function getBgImg() {
 }
 
 function setBgImgDefault() {
-  const imageDirectory = './img/background';
-  const imageFiles = files.filter(file => {
-    const ext = path.extname(file).toLowerCase();
-    return ext === '.jpg' || ext === '.webp';
-  });
-  console.log(imageFiles);
-
-  let imgIndex = 1 + ~~(Math.random() * 8); //3为图片数量
-  // console.log(imgIndex);
+  let imgIndex = 1 + ~~(Math.random() * 11); //3为图片数量
   let imgUrl = `./img/background/${imgIndex}.jpg`;
   let attempts = 0;
   const maxAttempts = 3;
@@ -48,8 +40,8 @@ function setBgImgDefault() {
   while (attempts++ < maxAttempts) {
     console.log(attempts);
     if (bg_img[1] === imgUrl) {
-      imgIndex = 1 + ~~(Math.random() * 8);
-      imgUrl = `./img/background/${imgIndex}.jpg`;
+      imgIndex = 1 + ~~(Math.random() * 3);
+      let imgUrl = `./img/background/${imgIndex}.jpg`;
     } else {
       bg_img[1] = imgUrl;
       setBgImg(bg_img);
@@ -65,12 +57,12 @@ function setBgImgDefault() {
       if (img.naturalWidth !== 0) {
         callback(imgUrl); // 图片加载成功，调用回调函数并传入图片URL
       } else {
-        callback("./img/background1.webp"); // 使用默认图片URL
+        callback("./img/background/8.jpg"); // 使用默认图片URL
       }
     };
 
     img.onerror = () => {
-      callback("./img/background1.webp"); // 图片加载失败，使用默认图片URL
+      callback("./img/background/8.jpg"); // 使用默认图片URL
     };
 
     img.src = imgUrl;
