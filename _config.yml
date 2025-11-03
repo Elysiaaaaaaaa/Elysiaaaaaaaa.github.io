@@ -23,10 +23,10 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "郑凯航"
+  name             : "Kaihang Zheng"
   pronouns         : # example: "she/her"
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
+  bio              : "Undergraduate student of the Department of Artificial Intelligence, Xiamen University"
+  location         : "Xiamen"
   employer         : "Xiamen University"
   uri              : # URL
   email            : "1023930132zkh@gmail.com"
